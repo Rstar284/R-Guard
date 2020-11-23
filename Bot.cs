@@ -15,6 +15,7 @@ using Microsoft.Extensions.Logging;
 using RGuard.Commands;
 using RGuard.Database;
 using RGuard.Extras;
+using RGuard.Services;
 
 namespace RGuard
 {
@@ -25,7 +26,7 @@ namespace RGuard
         public static DateTime StartupTime { get; } = DateTime.Now;
         public static string DefaultCommandPrefix { get; } = ".";
         public static Stopwatch CommandTimer { get; } = new Stopwatch();
-        public BotDbContext BotDBContext { get; private set; }
+        public BotDbContext BotDBContext { get; set; }
         public Task ShutDownTask { get => ShutDownTask; set { if (ShutDownTask is not null) return; } }
 
 
@@ -46,7 +47,8 @@ namespace RGuard
             _logger = logger;
             _eventHelper = eventHelper;
             _prefixService = prefixService;
-            client.MessageCreated += msgHandler.OnMessageCreate;
+            Emzi0767.Utilities.AsyncEventHandler<DiscordClient, DSharpPlus.EventArgs.MessageCreateEventArgs> onMessageCreate = msgHandler.OnMessageCreate;
+            client.MessageCreated += onMessageCreate;
             BotDBContext = dbFactory.CreateDbContext();
             Instance = this;
             Client = client;

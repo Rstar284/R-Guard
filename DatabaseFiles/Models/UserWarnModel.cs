@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RGuard.Database.Models
 {
-    class UserWarnModel
+    public class UserWarnModel
     {
         public int Id { get; set; }
         public ulong UserId {get; set;}

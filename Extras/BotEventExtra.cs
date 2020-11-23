@@ -22,8 +22,8 @@ namespace RGuard.Extras
         private readonly Stopwatch _time = new();
         private volatile bool _logged = false;
         private int _currentMemberCount = 0;
-        private int expectedMembers;
-        private int cachedMembers;
+        private readonly int expectedMembers;
+        private readonly int cachedMembers;
 
 
         public static List<Action> CacheStaff { get; } = new();

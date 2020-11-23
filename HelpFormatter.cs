@@ -10,11 +10,11 @@ namespace RGuard.Commands
 {
     // help formatters can alter the look of default help command,
     // this particular one replaces the embed with a simple text message.
-    public class SimpleHelpFormatter : BaseHelpFormatter
+    public class HelpFormatter : BaseHelpFormatter
     {
         private StringBuilder MessageBuilder { get; }
 
-        public SimpleHelpFormatter(CommandContext ctx) : base(ctx)
+        public HelpFormatter(CommandContext ctx) : base(ctx)
         {
             this.MessageBuilder = new StringBuilder();
         }

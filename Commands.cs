@@ -6,7 +6,7 @@ using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
 using DSharpPlus.Exceptions;
-using RGuard.Extensions;
+using RGuard.Extras;
 
 namespace RGuard.Commands
 {

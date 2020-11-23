@@ -3,7 +3,7 @@ using DSharpPlus.Entities;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace RGuard.Extensions
+namespace RGuard.Extras
 {
     public static class PermissionHelper
     {
